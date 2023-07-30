@@ -2,7 +2,7 @@
 
 num_threads=10  # 设置线程数
 num_loops=4000  # 设置总循环次数
-url="https://speed.cloudflare.com/__down?bytes=1073741824"  # 下载链接
+url="https://iptv.tsinghua.edu.cn/st/garbage.php?ckSize=10240"  # 下载链接
 
 function stop_processes {
   echo "接收到 SIGINT 信号，正在终止进程..."
