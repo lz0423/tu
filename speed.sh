@@ -2,7 +2,7 @@
 
 num_threads=10  # 设置线程数
 num_loops=99999999999  # 设置总循环次数
-url="https://img10.360buyimg.com/live/jfs/t1/128947/12/26918/1361527/6260e71bE0ee85af5/ecaa17ea8dd3dddb.jpg"  # 下载链接
+url="https://listen.10155.com/listener/womusic-bucket/90115000/mv_vod/volte_mp4/20230215/1625752132487675906.mp4"  # 下载链接
 
 function stop_processes {
   echo "接收到 SIGINT 信号，正在终止进程..."
