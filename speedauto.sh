@@ -4,8 +4,8 @@ num_threads=10  # 设置线程数
 num_loops=9999999999  # 设置总循环次数
 url="https://yun.mcloud.139.com/mCloud/mCloud_10.1.1_2310111_000.apk"  # 下载链接
 
-echo "请输入流量大小和单位（例如 10gb）："
-read size unit
+# 引入 input.sh 脚本，获取用户输入流量大小和单位
+source ~ https://ghproxy.com/https://raw.githubusercontent.com/lz0423/tu/main/input.sh
 
 case $unit in
   "mb"|"MB")
@@ -35,6 +35,13 @@ do
   echo "第 $((++num_loops)) 次下载开始"
   for ((j=0; j<$num_threads; j++)); do
     curl --retry 10 --retry-delay 1 -y 5 -Y 1048576 -m 120 -o /dev/null $url &
+  done
+  wait
+  bytes_downloaded=$((bytes_downloaded + 10737418240))  # 每次下载完成后累加已下载字节数
+  echo "已下载字节数: $bytes_downloaded"
+done
+
+echo "已达到设定的流量限制，停止下载。"    curl --retry 10 --retry-delay 1 -y 5 -Y 1048576 -m 120 -o /dev/null $url &
   done
   wait
   bytes_downloaded=$((bytes_downloaded + 10737418240))  # 每次下载完成后累加已下载字节数
