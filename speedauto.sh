@@ -2,10 +2,10 @@
 
 num_threads=10  # 设置线程数
 num_loops=9999999999  # 设置总循环次数
-url="https://speed.cloudflare.com/__down?bytes=1073741824"  # 下载链接
+url="https://yun.mcloud.139.com/mCloud/mCloud_10.1.1_2310111_000.apk"  # 下载链接
 
-unit=$1  # 从参数中获取流量单位
-size=$2  # 从参数中获取流量大小
+echo "请输入流量大小和单位（例如 10gb）："
+read size unit
 
 case $unit in
   "mb"|"MB")
